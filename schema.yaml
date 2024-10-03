@@ -1,10 +1,35 @@
 openapi: 3.0.3
 info:
-  title: OpenAPI schema for template walrus-template-template
+  title: OpenAPI schema for template .
 components:
   schemas:
     variables:
       type: object
+      properties:
+        release_name:
+          title: Release Name
+          type: string
+          description: The name of the Helm release.
+          default: keda
+          x-walrus-ui:
+            group: Basic
+            order: 1
+        namespace_name:
+          title: Namespace Name
+          type: string
+          description: The namespace where the Helm release will be installed.
+          default: keda-system
+          x-walrus-ui:
+            group: Basic
+            order: 2
+        chart_version:
+          title: Chart Version
+          type: string
+          description: The version of the keda Helm chart.
+          default: 2.15.1
+          x-walrus-ui:
+            group: Basic
+            order: 3
       x-walrus-ui:
         groupOrder:
         - Basic
